@@ -4,7 +4,7 @@
 This project monitors the operation of a multi-tier Java microservices application hosted on 5 VirtualBox machines using Nagios. 
 
 ## Architecture
-The application architecture is composed of 5 microservices, each one will be deployed on a separate VM. Nagios is deployed on a separate VM, and it will be used to monitor the 5 VMs of the application, besides the corresponding service on each VM.
+The application architecture is composed of 5 microservices, each one will be deployed on a separate VM. Nagios is deployed on a separate VM, and it will be used to monitor the 5 VMs of the application, besides the corresponding service one. The VMs and services are listed as follows.
 
 | VM              | Service                | VM Hostname |
 |-----------------|------------------------|-------------|
