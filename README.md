@@ -29,11 +29,12 @@ The application architecture is composed of 5 microservices, each one will be de
 - Install Vagrant plugins.
   ```bash
   vagrant plugin install vagrant-hostmanager
+  ```
 - Automate the creation and provisioning of the VMs using the associated Bash scripts.
   ```bash
   vagrant up
-
-  - Access Nagios UI dashboard usig IP address of Nagios VM.
+  ```
+- Access Nagios UI dashboard usig the IP address of Nagios VM.
 
 ## Nagios Hosts
 - Here is Nagios dashboard shows the 5 VMs of the application besides the localhost (Nagios VM).
