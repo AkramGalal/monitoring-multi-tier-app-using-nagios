@@ -33,6 +33,16 @@ The application architecture is composed of 5 microservices, each one will be de
   ```bash
   vagrant up
 
+  - Access Nagios UI dashboard usig IP address of Nagios VM.
+
+## Nagios Hosts
+- Here is Nagios dashboard shows the 5 VMs of the application besides the localhost (Nagios VM).
+ ![WhatsApp Image 2025-08-03 at 12 47 54 PM](https://github.com/user-attachments/assets/57ab5d3a-4a02-4e2f-94cd-e6e87e2087b6)
+
+## Nagios Services
+- Here is Nagios dashboard shows the 5 services.
+ ![WhatsApp Image 2025-08-03 at 12 47 53 PM](https://github.com/user-attachments/assets/32bbd031-1387-4f02-b141-f3b68a60ddb7)
+
 ## Packaging Vagrant Boxes
 - Packaging each VM, i.e., converting it to a Vagrant Box:
   ```bash
@@ -54,14 +64,3 @@ The application architecture is composed of 5 microservices, each one will be de
 - [mc01](https://portal.cloud.hashicorp.com/services/vagrant/registries/multi-tier-java-web-app-project1-boxes/boxes/mc01?project_id=f92dac97-833c-445f-b97f-2d0948d624c9)
 - [db01](https://portal.cloud.hashicorp.com/services/vagrant/registries/multi-tier-java-web-app-project1-boxes/boxes/db01?project_id=f92dac97-833c-445f-b97f-2d0948d624c9)
 - [nag01](https://portal.cloud.hashicorp.com/services/vagrant/registries/multi-tier-java-web-app-project1-boxes/boxes/nag01?project_id=f92dac97-833c-445f-b97f-2d0948d624c9)
-
-##
-
-### Nagios Hosts
-- Here is Nagios dashboard shows the 5 VMs of the application besides the localhost (Nagios VM).
- ![WhatsApp Image 2025-08-03 at 12 47 54 PM](https://github.com/user-attachments/assets/57ab5d3a-4a02-4e2f-94cd-e6e87e2087b6)
-
-### Nagios Services
-- Here is Nagios dashboard shows the 5 services.
- ![WhatsApp Image 2025-08-03 at 12 47 53 PM](https://github.com/user-attachments/assets/32bbd031-1387-4f02-b141-f3b68a60ddb7)
-
