@@ -35,14 +35,19 @@ The application architecture is composed of 5 microservices, each one will be de
   vagrant up
   ```
 - Access Nagios UI dashboard usig the IP address of Nagios VM.
+- Dashboard username: nagiosadmin and no password.
+- Note: If hosts/services are not fetched correctly on Nagios, try to restart nrpe service on each VM.
+ ```bash
+sudo systemctl restart nrpe
+ ```
 
 ## Nagios Hosts
 - Here is Nagios dashboard shows the 5 VMs of the application besides the localhost (Nagios VM).
- ![WhatsApp Image 2025-08-03 at 12 47 54 PM](https://github.com/user-attachments/assets/57ab5d3a-4a02-4e2f-94cd-e6e87e2087b6)
+ ![Image](https://github.com/user-attachments/assets/57ab5d3a-4a02-4e2f-94cd-e6e87e2087b6)
 
 ## Nagios Services
 - Here is Nagios dashboard shows the 5 services.
- ![WhatsApp Image 2025-08-03 at 12 47 53 PM](https://github.com/user-attachments/assets/32bbd031-1387-4f02-b141-f3b68a60ddb7)
+ ![Image](https://github.com/user-attachments/assets/32bbd031-1387-4f02-b141-f3b68a60ddb7)
 
 ## Packaging Vagrant Boxes
 - Packaging each VM, i.e., converting it to a Vagrant Box:
