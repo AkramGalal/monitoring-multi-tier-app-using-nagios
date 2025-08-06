@@ -54,3 +54,30 @@ mysql -u root -padmin123 accounts
 
 # Restart mariadb-server
 systemctl restart mariadb
+
+
+# Install Nagios plugin NRPE (Nagios Remote Plugin Executor)
+sudo dnf update -y
+sudo dnf install nrpe nagios-plugins-ping nagios-plugins-ssh nagios-plugins-http nagios-plugins-load nagios-plugins-disk nagios-plugins-procs -y
+
+# Allow accessibility from the Nagios server to the VM to perform monitoring actions.
+sudo cat >> /etc/nagios/nrpe.cfg <<EOF
+allowed_hosts=127.0.0.1,192.168.56.10
+EOF
+
+# Create a MariaDB user called nagios with password nagiospass and give it permissions for the Nagios check_mysql plugin to work.
+sudo mysql -u root -p <<SQL
+CREATE USER 'nagios'@'localhost' IDENTIFIED BY 'nagiospass';
+GRANT ALL PRIVILEGES ON *.* TO 'nagios'@'localhost';
+FLUSH PRIVILEGES;
+EXIT;
+SQL
+
+# Define the definition of check_command in the configuration file of the NRPE plugin 
+cat >> /etc/nagios/nrpe.cfg << EOF
+command[check_mysql]=/usr/lib64/nagios/plugins/check_mysql -H 127.0.0.1 -u nagios -p 'nagiospass'
+EOF
+
+# Restart NRPE service
+sudo systemctl restart nrpe
+sudo systemctl enable nrpe
